@@ -15,5 +15,21 @@ app.use(express.static('public'));
 app.use(cookieParser());
 
 
+// routes import
+
+import userRouter from './routes/user.routes.js'
+
+
+// routes declaration
+// app.use("/users", userRouter)
+
+// api ke throw karte he to
+app.use("/api/v1/users", userRouter)
+
+// url is prakar banega 
+// http://localhost:8000/users/register 
+// http://localhost:8000/api/v1/users/register
+
+
 
 export default app;

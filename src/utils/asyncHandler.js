@@ -3,9 +3,9 @@
 // this one code is used promise based code
 
 const asyncHandler = (requestHandler) => {
-     (req, res, next) => {
-        Promise.resolve(requestHandler(req, res, next)).
-        catch((err) => next(err));
+
+   return (req, res, next) => {
+      Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
 
      }
 }
